@@ -1,69 +1,93 @@
 * {
-  box-sizing: border-box;
-}
-
-body {
-  background: #000;
-}
-
-h1 {
-  font-size: 45px;
-}
-
-.createToDo input {
-  padding: 8px;
-  border: 2px solid #6e7681;
-  border-radius: 8px;
-  outline: none;
-  min-width: 600px;
-  background: #000;
-  color: azure;
-}
-
-.addBtn {
-  background-color: #765aec !important;
-  color: antiquewhite;
-}
-
-hr {
-  width: 100%;
-  padding: 1px;
-  background-color: aliceblue;
-}
-
-.todoList {
-  width: 100%;
-  max-height: 370px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.todoList::-webkit-scrollbar {
-  width: 20px;
-}
-
-.todoList::-webkit-scrollbar-thumb {
-  background-color: #765aec;
-  border-radius: 10px;
-}
-
-.todoList li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  border: 1.5px solid #6e7681;
-  border-radius: 6px;
-  padding: 5px 0 5px 10px;
-  margin-right: 10px;
-}
-
-.todoList li > span:first-child {
-  width: 460px;
-}
-
-.trashBtn {
-  border: none;
-}
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+  }
+  
+  .card {
+    background-color: #000;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  button {
+    padding: 0 !important;
+  }
+  
+  .theme {
+    z-index: 999;
+  }
+  
+  .createToDo input {
+    padding: 8px;
+    border: 2px solid #6e7681;
+    border-radius: 8px;
+    outline: none;
+    background: #000;
+    color: azure;
+  }
+  
+  .addBtn, .removeAllBtn {
+    background-color: #765aec !important;
+    color: antiquewhite;
+    margin-bottom: 12px;
+  }
+  
+  main hr {
+    width: 100%;
+    padding: .4px;
+    background-color: aliceblue;
+    margin: 0;
+  }
+  
+  ul {
+    padding: 0;
+  }
+  
+  ul li {
+    color: #fff;
+    border: 1.5px solid #6e7681;
+    border-radius: 6px;
+    padding: 8px 10px;
+    list-style-type: none;
+    margin: 10px 0;
+  }
+  
+  .trashBtn {
+    border: none;
+  }
+  
+  .todoContent {
+    color: #b1b1b1;
+  }
+  
+  .light {
+    background-color: white;
+    color: #000;
+  }
+  
+  .light .card {
+    background-color: white;
+    color: #000;
+  }
+  
+  .light .text-light {
+    color: #222 !important;
+  }
+  
+  .light input {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .light .todoContent {
+    color: #000;
+  }
+  
+  .light hr {
+    background-color: #000;
+  }
