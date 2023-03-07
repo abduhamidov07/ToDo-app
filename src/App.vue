@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <div id="app" class="container">
     <div class="position-absolute end-0 mt-2 me-2 theme">
       <input
         type="radio"
@@ -21,10 +21,10 @@
         @click="switchV"
       />
       <label for="light" v-if="showElem"
-        ><i class="fa-solid fa-sun text-white fs-3"></i
+        ><i class="fa-solid fa-sun text-white fs-3">qora</i
       ></label>
       <label for="dark" v-else
-        ><i class="fa-solid fa-moon text-dark fs-3"></i
+        ><i class="fa-solid fa-moon text-dark fs-3">oq</i
       ></label>
     </div>
     <div class="row row-cols-md-2 d-flex justify-content-center">
@@ -70,7 +70,7 @@
         </button>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -79,7 +79,7 @@ export default {
   name: "App",
   data() {
     return {
-      selectedStyle: "dark",
+      // selectedStyle: "dark",
       showElem: true,
       // changeStyle:,
     };
@@ -147,3 +147,100 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+  }
+  
+  .card {
+    background-color: #000;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  button {
+    padding: 0 !important;
+  }
+  
+  .theme {
+    z-index: 999;
+  }
+  
+  .createToDo input {
+    padding: 8px;
+    border: 2px solid #6e7681;
+    border-radius: 8px;
+    outline: none;
+    background: #000;
+    color: azure;
+  }
+  
+  .addBtn, .removeAllBtn {
+    background-color: #765aec !important;
+    color: antiquewhite;
+    margin-bottom: 12px;
+  }
+  
+  main hr {
+    width: 100%;
+    padding: .4px;
+    background-color: aliceblue;
+    margin: 0;
+  }
+  
+  ul {
+    padding: 0;
+  }
+  
+  ul li {
+    color: #fff;
+    border: 1.5px solid #6e7681;
+    border-radius: 6px;
+    padding: 8px 10px;
+    list-style-type: none;
+    margin: 10px 0;
+  }
+  
+  .trashBtn {
+    border: none;
+  }
+  
+  .todoContent {
+    color: #b1b1b1;
+  }
+  
+  .light {
+    background-color: white;
+    color: #000;
+  }
+  
+  .light .card {
+    background-color: white;
+    color: #000;
+  }
+  
+  .light .text-light {
+    color: #222 !important;
+  }
+  
+  .light input {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .light .todoContent {
+    color: #000;
+  }
+  
+  .light hr {
+    background-color: #000;
+  }
+</style>
