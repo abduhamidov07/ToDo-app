@@ -143,15 +143,15 @@ hr {
 }
 
 .fa-sun {
-  color: gray;
+  color: rgb(247, 255, 216);
 }
 
 .fa-moon {
-  color: gray;
+  color: rgb(24, 24, 24);
 }
 
 .theme i {
-  font-size: 25px;
+  font-size: 28px;
 }
 
 /* ====== dark mode ===== */
