@@ -4,24 +4,38 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  background-color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6,p,hr {
+  margin: 0;
 }
 
 button {
   cursor: pointer;
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.siteTitle {
+  font-size: 35px;
+  text-align: center;
+}
+
 .todoApp {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 45%;
+  width: 50%;
 }
 
 .addTodo {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-bottom: 20px;
 }
 
 .formGroup {
@@ -38,16 +52,19 @@ button {
   border-radius: 6px;
   padding: 8px;
   background: transparent;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .addBtn,
 .removeAllBtn {
   font-size: 20px;
+  width: 100%;
   background-color: #765aec;
   color: #fff;
   border-radius: 8px;
   border: none;
   padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transition: .2s ease;
 }
 
@@ -55,15 +72,69 @@ button {
   background-color: #6458EE;
 }
 
+.todoList h2 {
+  font-size: 35px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.todoList h3 {
+  font-size: 24px;
+  color: gray;
+  text-align: center;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .todo {
   border: 1px solid gray;
-  margin: 6px 0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.todoContent h5 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.todoInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.todoInfo span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 15px;
+}
+
+.todoInfo button {
+  font-size: 18px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.removeAllBtn {
+  margin: 25px 0;
 }
 
 .theme {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   z-index: 999;
 }
 
@@ -71,8 +142,64 @@ button {
   display: none;
 }
 
+.fa-sun {
+  color: gray;
+}
 
+.fa-moon {
+  color: gray;
+}
 
-.light {
+.theme i {
+  font-size: 25px;
+}
+
+/* ====== dark mode ===== */
+
+.dark {
   background-color: #000;
-} 
+}
+
+.dark > * {
+  color: #fff;
+}
+
+.dark input {
+  color: #fff;
+}
+
+.dark textarea {
+  color: #fff;
+}
+
+.dark .todoContent > h5 {
+  color: #e2dfdf;
+}
+
+.dark .todoInfo > p {
+  color: #cecece;
+}
+
+.dark small {
+  color: #A8A8A8;
+}
+
+.dark .deleteBtn {
+  color: #A8A8A8;
+}
+
+
+/* ======= Responsive  ===== */
+
+@media (max-width: 1060px) {
+  .todoApp {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .todoApp {
+    width: 90%;
+  }
+}
+
