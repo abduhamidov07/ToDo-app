@@ -1,53 +1,61 @@
 <template>
-  <div class="container">
-    <header>
-      <h1>Todo App</h1>
-    </header>
-    <main class="add-todo">
-      <h2>Add a Todo</h2>
-      <div class="form-group">
+  <section class="container todoApp">
+    <h1>Todo App</h1>
+    <main class="addTodo">
+      <div class="formGroup">
         <label for="title">Title:</label>
         <input type="text" id="title" v-model="todoTitle" />
       </div>
-      <div class="form-group">
+      <div class="formGroup">
         <label for="content">Content:</label>
         <textarea id="content" v-model="newTodo"></textarea>
       </div>
-      <button class="btn" @click="addTodo">Add</button>
+      <button class="addBtn" @click="addTodo">Add</button>
     </main>
-    <section class="todo-list">
+    <div class="todoList">
       <h2>Todo List</h2>
       <div class="todos">
         <div v-for="(todo, index) in todos" :key="index" class="todo">
-          <div class="todo-title">
+          <div class="todoContent">
             <h3>{{ todo.title }}</h3>
-            <button class="btn" @click="removeTodo(index)">Delete</button>
-            <button class="btn" @click="doneTodo(todo)">{{ todo.done ? 'Undone' : 'Done' }}</button>
-          </div>
-          <div class="todo-content">
-            <p>{{ todo.content }}</p>
-            <p>{{ todo.date }}</p>
+            <hr />
+            <div class="todoInfo">
+              <p>{{ todo.content }}</p>
+              <small>{{ todo.date }}</small>
+              <button class="btn" @click="removeTodo(index)">Delete</button>
+            </div>
           </div>
         </div>
       </div>
       <div v-if="todos.length > 0">
-        <button class="btn" @click="removeAll()">Remove All</button>
+        <button class="removeAllBtn" @click="removeAll()">Clear all</button>
       </div>
-    </section>
-  </div>
+    </div>
+    <div class="theme">
+      <input
+        type="radio"
+        id="light"
+        value="light"
+        v-model="selectedStyle"
+        @change="changeStyle"
+        @click="switchv"
+      />
+      <input
+        type="radio"
+        id="dark"
+        value="dark"
+        v-model="selectedStyle"
+        @change="changeStyle"
+        @click="switchv"
+      />
+      <label for="light" v-if="showElem"><i class="fa-solid fa-sun"></i></label>
+      <label for="dark" v-else><i class="fa-solid fa-moon"></i></label>
+    </div>
+  </section>
 </template>
 
 <script>
 import { ref } from "vue";
-
-const defaultData = [
-  {
-    done: false,
-    title: "Example Todo",
-    content: "This is an example todo.",
-    date: new Date().toLocaleDateString(),
-  },
-];
 
 export default {
   name: "App",
@@ -55,9 +63,24 @@ export default {
     return {
       todoTitle: "",
       newTodo: "",
+      showElem: true,
     };
   },
   methods: {
+    changeStyle() {
+      const body = document.body;
+      switch (this.selectedStyle) {
+        case "light":
+          body.classList.add("light");
+          break;
+        case "dark":
+          body.classList.remove("light");
+          break;
+      }
+    },
+    switchv() {
+      this.showElem = !this.showElem;
+    },
     addTodo() {
       if (this.newTodo && this.todoTitle) {
         this.todos.push({
@@ -70,10 +93,6 @@ export default {
         this.todoTitle = "";
         this.saveData();
       }
-    },
-    doneTodo(todo) {
-      todo.done = !todo.done;
-      this.saveData();
     },
     removeTodo(index) {
       this.todos.splice(index, 1);
@@ -97,4 +116,4 @@ export default {
     };
   },
 };
-</script>                
+</script>

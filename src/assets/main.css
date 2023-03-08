@@ -1,93 +1,78 @@
 * {
-    box-sizing: border-box;
-  }
-/*   
-  body {
-    background-color: #000;
-  }
-  
-  .card {
-    background-color: #000;
-  } */
-  
-  p {
-    margin: 0;
-  }
-  
-  button {
-    padding: 0 !important;
-  }
-  
-  .theme {
-    z-index: 999;
-  }
-  
-  .createToDo input {
-    padding: 8px;
-    border: 2px solid #6e7681;
-    border-radius: 8px;
-    outline: none;
-    background: #000;
-    color: azure;
-  }
-  
-  .addBtn, .removeAllBtn {
-    background-color: #765aec !important;
-    color: antiquewhite;
-    margin-bottom: 12px;
-  }
-  
-  main hr {
-    width: 100%;
-    padding: .4px;
-    background-color: aliceblue;
-    margin: 0;
-  }
-  
-  ul {
-    padding: 0;
-  }
-  
-  ul li {
-    color: #fff;
-    border: 1.5px solid #6e7681;
-    border-radius: 6px;
-    padding: 8px 10px;
-    list-style-type: none;
-    margin: 10px 0;
-  }
-  
-  .trashBtn {
-    border: none;
-  }
-  
-  .todoContent {
-    color: #b1b1b1;
-  }
-  
-  .light {
-    background-color: white;
-    color: #000;
-  }
-  
-  .light .card {
-    background-color: white;
-    color: #000;
-  }
-  
-  .light .text-light {
-    color: #222 !important;
-  }
-  
-  .light input {
-    background-color: #fff;
-    color: #000;
-  }
-  
-  .light .todoContent {
-    color: #000;
-  }
-  
-  .light hr {
-    background-color: #000;
-  }
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #fff;
+}
+
+button {
+  cursor: pointer;
+}
+
+.todoApp {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 45%;
+}
+
+.addTodo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formGroup > input, textarea {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  outline: none;
+  border: 1.8px solid gray;
+  border-radius: 6px;
+  padding: 8px;
+  background: transparent;
+}
+
+.addBtn,
+.removeAllBtn {
+  font-size: 20px;
+  background-color: #765aec;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  transition: .2s ease;
+}
+
+.addBtn:hover , .removeAllBtn:hover {
+  background-color: #6458EE;
+}
+
+.todo {
+  border: 1px solid gray;
+  margin: 6px 0;
+}
+
+.theme {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+}
+
+.theme input {
+  display: none;
+}
+
+
+
+.light {
+  background-color: #000;
+} 
