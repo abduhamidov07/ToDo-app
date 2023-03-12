@@ -6,7 +6,14 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6,p,hr {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr {
   margin: 0;
 }
 
@@ -44,7 +51,8 @@ button {
   gap: 6px;
 }
 
-.formGroup > input, textarea {
+.formGroup > input,
+textarea {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   outline: none;
@@ -56,7 +64,7 @@ button {
 }
 
 .addBtn,
-.removeAllBtn {
+.deleteAllBtn {
   font-size: 20px;
   width: 100%;
   background-color: #765aec;
@@ -65,11 +73,12 @@ button {
   border: none;
   padding: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  transition: .2s ease;
+  transition: 0.2s ease;
 }
 
-.addBtn:hover , .removeAllBtn:hover {
-  background-color: #6458EE;
+.addBtn:hover,
+.deleteAllBtn:hover {
+  background-color: #6458ee;
 }
 
 .todoList h2 {
@@ -88,6 +97,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding: 0;
 }
 
 .todo {
@@ -95,6 +105,7 @@ button {
   padding: 10px;
   border-radius: 8px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  list-style-type: none;
 }
 
 hr {
@@ -104,6 +115,7 @@ hr {
 
 .todoContent h5 {
   font-size: 20px;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -127,7 +139,7 @@ hr {
   outline: none;
 }
 
-.removeAllBtn {
+.deleteAllBtn {
   margin: 25px 0;
 }
 
@@ -181,13 +193,12 @@ hr {
 }
 
 .dark small {
-  color: #A8A8A8;
+  color: #a8a8a8;
 }
 
 .dark .deleteBtn {
-  color: #A8A8A8;
+  color: #a8a8a8;
 }
-
 
 /* ======= Responsive  ===== */
 
@@ -202,4 +213,3 @@ hr {
     width: 90%;
   }
 }
-
