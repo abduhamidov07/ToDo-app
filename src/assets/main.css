@@ -51,8 +51,8 @@ button {
   gap: 6px;
 }
 
-.formGroup > input,
-textarea {
+.formGroup input,
+.formGroup textarea {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   outline: none;
@@ -61,6 +61,7 @@ textarea {
   padding: 8px;
   background: transparent;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  resize: vertical;
 }
 
 .addBtn,
@@ -128,7 +129,7 @@ hr {
 .todoInfo span {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   margin-left: 15px;
 }
 
@@ -137,10 +138,55 @@ hr {
   border: none;
   background: none;
   outline: none;
+  padding: 0;
+}
+
+.todoInfo .editBtns {
+  font-size: 14px;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background-color: #777777;
+  color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.editInput, .editTextarea {
+  font-family: 'Nunito', sans-serif;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  resize: vertical;
+}
+
+.editInput {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.editTextarea {
+  font-size: 16px;
+  width: 100%;
 }
 
 .deleteAllBtn {
   margin: 25px 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+}
+
+li {
+  transition: all .3s ease;
 }
 
 .theme {
@@ -196,7 +242,11 @@ hr {
   color: #a8a8a8;
 }
 
-.dark .deleteBtn {
+.dark .editInput, .dark .editTextarea {
+  box-shadow: rgba(135, 173, 255, 0.25) 0px 30px 60px -12px inset, rgba(161, 175, 255, 0.3) 0px 18px 36px -18px inset;
+} 
+
+.dark .deleteBtn, .dark .editBtn {
   color: #a8a8a8;
 }
 
