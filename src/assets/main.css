@@ -210,6 +210,7 @@ li {
 
 .theme i {
   font-size: 28px;
+  cursor: pointer;
 }
 
 /* ====== dark mode ===== */
